@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RageCam</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css") rel="stylesheet">
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <div class="login-box">
+            <h1>RageCam</h1>
+            <input type="text" id="username" placeholder="Your Name" required>
+            <input type="text" id="roomName" placeholder="Room Name" required>
+            <input type="password" id="roomPassword" placeholder="Room Password" required>
+            <button onclick="joinRoom()">Join Room</button>
+        </div>
+    </div>
+
+    <div class="meeting-container hidden" id="meetingContainer">
+        <div class="video-grid" id="videoGrid">
+            <div class="video-container">
+                <video id="localVideo" autoplay muted></video>
+                <div class="user-name" id="localUserName"></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="toggleVideo" class="control-btn">
+                <i class="fas fa-video"></i>
+            </button>
+            <button id="toggleAudio" class="control-btn">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <button id="leaveRoom" class="control-btn leave">
+                <i class="fas fa-phone-slash"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="[https://cdn.socket.io/4.7.2/socket.io.min.js"></script>](https://cdn.socket.io/4.7.2/socket.io.min.js"></script>)
+    <script src="client.js"></script>
+</body>
+</html>
